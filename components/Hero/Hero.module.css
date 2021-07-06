@@ -1,0 +1,4 @@
+.customHero > div {
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+}
