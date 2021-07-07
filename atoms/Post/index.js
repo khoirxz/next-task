@@ -25,8 +25,8 @@ const Post = ({ title, imgUrl, tags }) => {
       </Box>
       <Box px={2}>
         <Text>
-          {tags.map((tag) => (
-            <Badge marginRight={4} my={3} colorScheme={colorBadge(tag)}>
+          {tags.map((tag, i) => (
+            <Badge key={i} marginRight={4} my={3} colorScheme={colorBadge(tag)}>
               #{tag}
             </Badge>
           ))}
