@@ -1,6 +1,7 @@
 import React from "react";
 import { Badge, Box, Text } from "@chakra-ui/react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const colorBadge = (color) => {
   switch (color.toLowerCase()) {
@@ -19,7 +20,15 @@ const colorBadge = (color) => {
 
 const Post = ({ title, imgUrl, tags }) => {
   return (
-    <Box cursor="pointer" w="full" h="280px" bgColor="white" shadow="md">
+    <Box
+      as={motion.div}
+      whileHover={{ scale: 1.1 }}
+      cursor="pointer"
+      w="full"
+      h="280px"
+      bgColor="white"
+      shadow="md"
+    >
       <Box maxW="full" maxH="200px" w="full" h="full" position="relative">
         <Image alt={title} src={imgUrl} layout="fill" objectFit="cover" />
       </Box>

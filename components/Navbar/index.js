@@ -1,10 +1,14 @@
-import React from "react";
-import { Box, Text, Button } from "@chakra-ui/react";
+import React, { useRef } from "react";
+import { Box, Text, Button, useDisclosure } from "@chakra-ui/react";
 
 import Logo from "../../utils/Logo";
 import Container from "../../utils/Container";
+import Sidnav from "../../atoms/Sidenav";
 
 const Navbar = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = useRef();
+
   return (
     <Box as="nav" bgColor="transparent">
       <Container>
@@ -42,11 +46,14 @@ const Navbar = () => {
             bgColor="red.500"
             color="white"
             display={["flex", "flex", "none"]}
+            ref={btnRef}
+            onClick={onOpen}
           >
             Menu
           </Button>
         </Box>
       </Container>
+      <Sidnav isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
     </Box>
   );
 };

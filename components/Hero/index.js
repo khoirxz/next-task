@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Box, Button, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 import Container from "../../utils/Container";
 import styles from "./Hero.module.css";
@@ -51,7 +52,12 @@ const Hero = () => {
             Dari resep masakan bintang 5 sampai masakan rumahan, semua gratis !
             Ayo langsung coba!
           </Text>
-          <Button colorScheme="red" shadow="md">
+          <Button
+            as={motion.button}
+            animate={{ scale: 1.1 }}
+            colorScheme="red"
+            shadow="md"
+          >
             Cari Resep
           </Button>
         </Box>
