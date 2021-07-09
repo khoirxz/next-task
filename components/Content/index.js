@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Center, Icon, Text, Grid } from "@chakra-ui/react";
+import { Box, Center, Icon, Text, Grid, Button } from "@chakra-ui/react";
 import { TriangleDownIcon } from "@chakra-ui/icons";
 
 import Container from "../../utils/Container";
@@ -62,6 +62,11 @@ const Content = () => {
           ))}
         </Grid>
       </Box>
+      <Center mt="3rem">
+        <Button colorScheme="red" shadow="md">
+          Lebih bayak lagi
+        </Button>
+      </Center>
     </Container>
   );
 };

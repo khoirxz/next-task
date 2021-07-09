@@ -23,11 +23,15 @@ const Post = ({ title, imgUrl, tags }) => {
     <Box
       as={motion.div}
       whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 1 }}
       cursor="pointer"
       w="full"
       h="280px"
-      bgColor="white"
-      shadow="md"
+      _hover={{
+        shadow: "xl",
+      }}
+      shadow="sm"
+      backgroundColor="white"
     >
       <Box maxW="full" maxH="200px" w="full" h="full" position="relative">
         <Image alt={title} src={imgUrl} layout="fill" objectFit="cover" />
