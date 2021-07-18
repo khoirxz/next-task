@@ -8,6 +8,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Sidnav = ({ isOpen, onClose, btnRef }) => {
   return (
@@ -34,7 +35,7 @@ const Sidnav = ({ isOpen, onClose, btnRef }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Resep
+            <Link href="/resep">Resep</Link>
           </Center>
           <Center
             margin="auto"
@@ -47,7 +48,7 @@ const Sidnav = ({ isOpen, onClose, btnRef }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Forum
+            <Link href="/forum">Forum</Link>
           </Center>
           <Center
             margin="auto"

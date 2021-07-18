@@ -1,0 +1,4 @@
+.postImage > div {
+  border-top-left-radius: var(--chakra-radii-xl);
+  border-top-right-radius: var(--chakra-radii-xl);
+}

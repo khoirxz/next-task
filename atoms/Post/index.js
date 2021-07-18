@@ -3,6 +3,8 @@ import { Badge, Box, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import styles from "./Post.module.css";
+
 const colorBadge = (color) => {
   switch (color.toLowerCase()) {
     case "mudah":
@@ -32,8 +34,16 @@ const Post = ({ title, imgUrl, tags }) => {
       }}
       shadow="sm"
       backgroundColor="white"
+      rounded="xl"
     >
-      <Box maxW="full" maxH="200px" w="full" h="full" position="relative">
+      <Box
+        maxW="full"
+        maxH="200px"
+        w="full"
+        h="full"
+        position="relative"
+        className={styles.postImage}
+      >
         <Image alt={title} src={imgUrl} layout="fill" objectFit="cover" />
       </Box>
       <Box px={2}>
@@ -44,8 +54,13 @@ const Post = ({ title, imgUrl, tags }) => {
             </Badge>
           ))}
         </Text>
-        <Text as="h3" fontSize="18px" fontWeight="bold">
-          {title}
+        <Text
+          as="h3"
+          fontSize="18px"
+          fontWeight="bold"
+          title={title.length >= 21 ? title : ""}
+        >
+          {title.length >= 21 ? title.slice(0, 20) + "..." : title}
         </Text>
       </Box>
     </Box>

@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
-import { Box, Text, Button, useDisclosure } from "@chakra-ui/react";
+import { Box, Text, Button, useDisclosure, IconButton } from "@chakra-ui/react";
+import Link from "next/link";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 import Logo from "../../utils/Logo";
 import Container from "../../utils/Container";
@@ -30,10 +32,10 @@ const Navbar = () => {
             alignItems="center"
           >
             <Text as="li" px="2rem" fontWeight="light">
-              Resep
+              <Link href="/resep">Resep</Link>
             </Text>
             <Text as="li" px="2rem" fontWeight="light">
-              Forum
+              <Link href="/forum">Forum</Link>
             </Text>
             <Text as="li" px="2rem" fontWeight="light">
               Restoran
@@ -42,15 +44,15 @@ const Navbar = () => {
               <Button colorScheme="red">Login</Button>
             </li>
           </Box>
-          <Button
+          <IconButton
             bgColor="red.500"
             color="white"
             display={["flex", "flex", "none"]}
             ref={btnRef}
+            rounded="xl"
             onClick={onOpen}
-          >
-            Menu
-          </Button>
+            icon={<GiHamburgerMenu />}
+          />
         </Box>
       </Container>
       <Sidnav isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
